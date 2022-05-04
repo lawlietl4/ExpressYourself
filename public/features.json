@@ -1,0 +1,12 @@
+{
+    "features":[
+        {
+            "name": "test",
+            "description": "this is a test"
+        },
+        {
+            "name": "real deal",
+            "description": "this is the real deal :)"
+        }
+    ]
+}

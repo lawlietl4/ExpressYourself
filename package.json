@@ -1,0 +1,24 @@
+{
+  "name": "nroberson-expresslab",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/lawlietl4/InteractiveWebDev.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lawlietl4/InteractiveWebDev/issues"
+  },
+  "homepage": "https://github.com/lawlietl4/InteractiveWebDev#readme",
+  "dependencies": {
+    "pug": "^3.0.2",
+    "express": "^4.17.3"
+  }
+}

@@ -1,0 +1,13 @@
+doctype html
+head
+    style
+        include ../css/style.css
+    title NRoberson-ExpressYourself-Features
+body
+    include navbar.pug
+    div#contentGroup
+        h1#header features
+        ul#features
+        each feature in featureJSON
+            li#name.featureName name: !{feature.name}
+            li#description.descriptionText description: !{feature.description}
