@@ -18,11 +18,6 @@ server.get("/", (req, res, next) => {
 	res.end(template);
 });
 
-server.get('/cardBack.webp', (res,req,next)=>{
-	if(err) throw err;
-	res.send('./public/images/cardBack.webp');
-})
-
 server.get("/features", (req, res, next) => {
 	const template = pug.compileFile("public/templates/features.pug")({
 		featureJSON: featureJSON.features,
