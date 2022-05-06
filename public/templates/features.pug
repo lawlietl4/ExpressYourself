@@ -6,8 +6,8 @@ head
 body
     include navbar.pug
     div#contentGroup
-        h1#header features
-        ul#features
+        h1#header.featureHeader features
+        ul#features.featureList
         each feature in featureJSON
             li#name.featureName name: !{feature.name}
             li#description.descriptionText description: !{feature.description}

@@ -1,4 +1,8 @@
-nav#navbar
-    a#homeBtn.button(href='/') Home
-    a#featureBtn.button(href='/features') Features
-    a#orderBtn.button(href='/orders') Orders
+div#navbarLayout
+    nav#navbar
+        ul#destinations.destinationeList
+        each destination in destinations
+            a(href="#{destination.endpoint}") !{destination.name}
+//- a#homeBtn.button(href='/') Home
+//- a#featureBtn.button(href='/features') Features
+//- a#orderBtn.button(href='/orders') Orders

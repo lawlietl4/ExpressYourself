@@ -1,0 +1,16 @@
+{
+    "destinations":[
+        {
+            "name": "home",
+            "endpoint": "public/templates/title.pug"
+        },
+        {
+            "name": "features",
+            "endpoint": "public/templates/features.pug"
+        },
+        {
+            "name": "orders",
+            "endpoint": "public/templates/order.pug"
+        }
+    ]
+}

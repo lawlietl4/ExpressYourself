@@ -4,14 +4,27 @@ head
     title NRoberson-ExpressYourself-Orders
 body
     include navbar.pug
-    form#orderForm(role='form' method='POST' action='http://localhost:3000/orderIntake')
-        div.form-group
-            label(for='name') Name:
-            input#name.form-control(type='text' placeholder='name' name='name')
-        div.form-group
-            label(for='email') Email:
-            input#email.form-control(type='email' placeholder='name@email.com' name='email')
-        div.form-group
-            label(for='orderText') Order:
-            input#orderInfo.form-control(type='text' placeholder='input requested order here' name='orderInfo')
-        button.btn.btn-primary(type='submit' name='submitBtn') Submit
+    div#form.form-group
+        form#orderForm(role='form' method='POST' action='/orderIntake' onsubmit="return formSubmit()")
+            div.form-group
+                label(for='orderName') Name:
+                input#name.form-control(type='text' placeholder='name' name='orderName')
+            div.form-group
+                label(for='orderEmail') Email:
+                input#email.form-control(type='email' placeholder='name@email.com' name='orderEmail')
+            div.form-group
+                label(for='orderText') Order:
+                input#orderInfo.form-control(type='text' placeholder='input requested order here' name='orderInfo')
+            button.btn.btn-primary(type='submit' name='submitBtn') Submit
+    script.
+        function formSubmit() {
+            var data = new FormData();
+            data.append('name', document.getElementById('orderName').value);
+            data.append('email', document.getElementById('orderEmail').value);
+            data.append('info', document.getElementById('orderInfo').value);
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "http://localhost:3000/orderIntake");
+            xhr.addHeader('Content-Type', 'application/json');
+            xhr.send(data);
+            return false;
+        }
