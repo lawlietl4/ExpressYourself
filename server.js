@@ -18,6 +18,11 @@ server.get("/", (req, res, next) => {
 	res.end(template);
 });
 
+server.get('/cardBack.webp', (res,req,next)=>{
+	if(err) throw err;
+	res.send('./public/images/cardBack.webp');
+})
+
 server.get("/features", (req, res, next) => {
 	const template = pug.compileFile("public/templates/features.pug")({
 		featureJSON: featureJSON.features,
@@ -32,8 +37,6 @@ server.get("/orders", (req, res, next) => {
 });
 
 server.post("/orderIntake", (req, res, next) => {
-	const template = pug.compileFile("public/templates/orderComplete.pug")({});
-	res.send(template);
 	fs.open("./public/output/order.txt", "r", function (err, fd) {
 		if (err) {
 			fs.writeFile("./public/order.txt", "", function (err) {
@@ -50,6 +53,7 @@ server.post("/orderIntake", (req, res, next) => {
 			}
 		);
 	});
+	res.redirect('/orders');
 });
 
 server.listen(port, (error) => {

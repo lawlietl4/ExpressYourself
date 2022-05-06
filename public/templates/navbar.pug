@@ -1,8 +1,5 @@
 div#navbarLayout
     nav#navbar
-        ul#destinations.destinationeList
+        ul#destinations.destinationList
         each destination in destinations
-            a(href="#{destination.endpoint}") !{destination.name}
-//- a#homeBtn.button(href='/') Home
-//- a#featureBtn.button(href='/features') Features
-//- a#orderBtn.button(href='/orders') Orders
+            a(href=destination.endpoint, name=destination.name).button !{destination.name}

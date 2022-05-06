@@ -2,15 +2,15 @@
     "destinations":[
         {
             "name": "home",
-            "endpoint": "public/templates/title.pug"
+            "endpoint": "/"
         },
         {
             "name": "features",
-            "endpoint": "public/templates/features.pug"
+            "endpoint": "features"
         },
         {
             "name": "orders",
-            "endpoint": "public/templates/order.pug"
+            "endpoint": "orders"
         }
     ]
 }

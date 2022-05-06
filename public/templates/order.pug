@@ -15,7 +15,7 @@ body
             div.form-group
                 label(for='orderText') Order:
                 input#orderInfo.form-control(type='text' placeholder='input requested order here' name='orderInfo')
-            button.btn.btn-primary(type='submit' name='submitBtn') Submit
+            button.btn.btn-primary(type='submit' name='submitBtn' target='#') Submit
     script.
         function formSubmit() {
             var data = new FormData();
@@ -23,7 +23,7 @@ body
             data.append('email', document.getElementById('orderEmail').value);
             data.append('info', document.getElementById('orderInfo').value);
             var xhr = new XMLHttpRequest();
-            xhr.open("POST", "http://localhost:3000/orderIntake");
+            xhr.open("POST", "http://localhost:3000/orders#");
             xhr.addHeader('Content-Type', 'application/json');
             xhr.send(data);
             return false;
